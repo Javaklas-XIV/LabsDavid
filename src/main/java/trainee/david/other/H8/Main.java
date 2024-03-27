@@ -1,12 +1,13 @@
-package trainee.david.other;
+package trainee.david.other.H8;
+
+import trainee.david.other.H7.Person;
+import trainee.david.other.H7.PersonDiedException;
 
 import java.lang.reflect.*;
-import java.util.ArrayList;
-import java.util.List;
 
-public class H8 {
+public class Main {
 
-    public static void run() throws PersonDiedException {
+    public static void main(String[] args) throws PersonDiedException {
         Person alice = new Person("Alice", 20, Person.Gender.FEMALE);
         Person bob = new Person("Bob", 21, Person.Gender.MALE);
         Person aliceTheSecond = new Person("Alice", 20, Person.Gender.FEMALE);

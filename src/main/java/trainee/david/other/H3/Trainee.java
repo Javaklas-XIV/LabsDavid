@@ -1,4 +1,4 @@
-package trainee.david.other;
+package trainee.david.other.H3;
 
 public class Trainee {
 

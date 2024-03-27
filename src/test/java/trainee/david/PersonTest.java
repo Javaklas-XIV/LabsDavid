@@ -2,8 +2,8 @@ package trainee.david;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import trainee.david.other.Person;
-import trainee.david.other.PersonDiedException;
+import trainee.david.other.H7.Person;
+import trainee.david.other.H7.PersonDiedException;
 
 import static org.junit.jupiter.api.Assertions.*;
 

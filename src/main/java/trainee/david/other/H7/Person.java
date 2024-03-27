@@ -1,6 +1,4 @@
-package trainee.david.other;
-
-import java.util.Objects;
+package trainee.david.other.H7;
 
 public class Person {
 
@@ -13,7 +11,7 @@ public class Person {
     private final String name;
     private int age;
 
-    public Person(String name, int age) throws PersonDiedException{
+    public Person(String name, int age) throws PersonDiedException {
         this.name = name;
         if (age <= 130) this.age = age;
         else throw new PersonDiedException();

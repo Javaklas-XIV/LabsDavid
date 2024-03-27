@@ -1,10 +1,10 @@
-package trainee.david.other;
+package trainee.david.other.H3;
 
-public class H3 {
+public class Main {
 
     private enum Weekday {MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY}
 
-    public static void run(){
+    public static void main(String[] args){
         System.out.println(Weekday.MONDAY);
 
         overflow();

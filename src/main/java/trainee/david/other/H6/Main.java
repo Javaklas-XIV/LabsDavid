@@ -1,8 +1,8 @@
-package trainee.david.other;
+package trainee.david.other.H6;
 
-public class H6 {
+public class Main {
 
-    public static void run(){
+    public static void main(String[] args){
         long[] row = new long[4];
         row[2] = 3;
         long[] copy = row;

@@ -1,12 +1,12 @@
-package trainee.david.other;
+package trainee.david.other.H4;
 
 import java.util.Scanner;
 
-public class H4 {
+public class Main {
 
     private static String bankAccountNumber;
 
-    public static void run(){
+    public static void main(String[] args){
         Scanner input = new Scanner(System.in);
 
         printTable(7, 10);

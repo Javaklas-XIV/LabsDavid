@@ -1,12 +1,12 @@
-package trainee.david.other;
+package trainee.david.other.H2;
 
 import java.util.Scanner;
 
 import static java.lang.Math.abs;
 
-public class H2 {
+public class Main {
 
-    public static void run(){
+    public static void main(String[] args){
         int plusTwo = abs(-2);
         System.out.println("Plus two: " + plusTwo);
 
