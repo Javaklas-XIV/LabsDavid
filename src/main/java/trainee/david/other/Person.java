@@ -1,5 +1,7 @@
 package trainee.david.other;
 
+import java.util.Objects;
+
 public class Person {
 
     public static String universalRights = "All humans are created equal";
@@ -42,5 +44,22 @@ public class Person {
     public void haveBirthday() throws PersonDiedException{
         if (age + 1 > MAXIMUM_AGE) throw new PersonDiedException();
         age++;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj.getClass() != Person.class) return false;
+        Person other = (Person) obj;
+        return other.name.equals(name) && other.age == age && other.gender == gender;
+    }
+
+    @Override
+    public int hashCode() {
+        return age * name.hashCode() * gender.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "%s (%d) is %s".formatted(name, age, gender);
     }
 }
