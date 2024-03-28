@@ -3,8 +3,6 @@ import trainee.david.bank.Account;
 import trainee.david.bank.AccountManager;
 import trainee.david.webshop.controller.WebshopController;
 
-import java.util.Iterator;
-
 public class Main {
 
     private static WebshopController controller;

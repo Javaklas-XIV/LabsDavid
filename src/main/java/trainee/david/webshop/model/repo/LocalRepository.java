@@ -1,14 +1,32 @@
 package trainee.david.webshop.model.repo;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-public class LocalRepository<T> implements IRepo<T> {
+public abstract class LocalRepository<T> implements IRepo<T>, Iterable<T> {
 
     protected final List<T> items;
 
     public LocalRepository() {
         items = new ArrayList<>();
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new Iterator<>() {
+            private int index = 0;
+
+            @Override
+            public boolean hasNext() {
+                return index < items.size();
+            }
+
+            @Override
+            public T next() {
+                return items.get(index++);
+            }
+        };
     }
 
     @Override
