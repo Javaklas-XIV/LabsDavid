@@ -1,6 +1,8 @@
 package trainee.david.other.H7;
 
-public class Person {
+import trainee.david.other.H10.Human;
+
+public class Person extends Human {
 
     public static String universalRights = "All humans are created equal";
     public static int MAXIMUM_AGE = 130;
@@ -21,6 +23,11 @@ public class Person {
     public Person(String name, int age, Gender gender) throws PersonDiedException {
         this(name, age);
         this.gender = gender;
+    }
+
+    @Override
+    public String greet() {
+        return "Hello, my name is %s. Nice to meet you!".formatted(name);
     }
 
     public void setGender(Gender gender) {

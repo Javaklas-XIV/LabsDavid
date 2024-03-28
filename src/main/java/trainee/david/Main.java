@@ -14,6 +14,7 @@ public class Main {
         manager.add(3);
         manager.add(4);
         manager.add(2);
+        manager.add(3);
 
         for (Account account : manager){
             System.out.println(account);
