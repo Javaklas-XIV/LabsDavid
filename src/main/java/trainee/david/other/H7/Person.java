@@ -53,9 +53,10 @@ public class Person extends Human {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj.getClass() != Person.class) return false;
-        Person other = (Person) obj;
-        return other.name.equals(name) && other.age == age && other.gender == gender;
+        if (obj instanceof Person other){
+            return other.name.equals(name) && other.age == age && other.gender == gender;
+        }
+        return false;
     }
 
     @Override

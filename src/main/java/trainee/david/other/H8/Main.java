@@ -4,6 +4,9 @@ import trainee.david.other.H7.Person;
 import trainee.david.other.H7.PersonDiedException;
 
 import java.lang.reflect.*;
+import java.security.AlgorithmConstraints;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Main {
 
@@ -28,8 +31,28 @@ public class Main {
         Field[] fields = Person.class.getDeclaredFields();
         for (Field field : fields) System.out.println("Field: " + field.getName());
 
-        Method[] methods = alice.getClass().getMethods();
+        Method[] methods = alice.getClass().getDeclaredMethods();
         for (Method method : methods) System.out.println("Method: " + method.getName());
+
+        // Set
+        System.out.println("\n--- HashSet ---\n");
+
+        Set<Person> people = new HashSet<>();
+        people.add(alice);
+        people.add(aliceTheSecond);
+        for (Person person : people){
+            System.out.println(person);
+        }
+
+        Set<PersonRecord> peopleRecords = new HashSet<>();
+        PersonRecord aliceRecord = new PersonRecord("Alice", 20);
+        PersonRecord aliceTheSecondRecord = new PersonRecord("Alice", 20);
+        peopleRecords.add(aliceRecord);
+        peopleRecords.add(aliceTheSecondRecord);
+
+        for (PersonRecord person : peopleRecords){
+            System.out.println(person);
+        }
     }
 
 }
