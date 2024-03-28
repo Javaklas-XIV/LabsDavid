@@ -9,7 +9,6 @@ public class H2 {
     public static void run(){
         int plusTwo = abs(-2);
         System.out.println("Plus two: " + plusTwo);
-        System.out.println("Hoi");
 
         Scanner in = new Scanner(System.in);
         System.out.print("Enter username: ");
