@@ -1,10 +1,13 @@
 package trainee.david.other.H7;
 
 import trainee.david.other.H10.Human;
+import trainee.david.other.H12.MyAnnotation;
+import trainee.david.other.H12.MyAnnotation2;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@MyAnnotation
 public class Person extends Human {
 
     public static String universalRights = "All humans are created equal";
@@ -16,7 +19,7 @@ public class Person extends Human {
     private final String name;
     private int age;
 
-    private List<HistoryRecord> history;
+    private final List<HistoryRecord> history;
 
     public Person(String name, int age) throws PersonDiedException {
         this.name = name;
@@ -40,10 +43,12 @@ public class Person extends Human {
         this.gender = gender;
     }
 
+    @MyAnnotation2
     public String getName() {
         return name;
     }
 
+    @MyAnnotation
     public int getAge() {
         return age;
     }
