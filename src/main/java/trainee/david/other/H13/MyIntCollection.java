@@ -1,6 +1,7 @@
 package trainee.david.other.H13;
 
 import java.lang.reflect.Array;
+import java.util.List;
 
 public class MyIntCollection<T> {
 
@@ -25,6 +26,10 @@ public class MyIntCollection<T> {
 //        list = new T[size * 2];
         list = (T[]) Array.newInstance(tClass, size * 2);
         System.arraycopy(old, 0, list, 0, old.length);
+    }
+
+    public <I> void copy(List<I> from, List<? super I> to){
+        to.addAll(from);
     }
 
     @Override

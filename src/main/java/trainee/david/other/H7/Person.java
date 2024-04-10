@@ -5,10 +5,11 @@ import trainee.david.other.H12.MyAnnotation;
 import trainee.david.other.H12.MyAnnotation2;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 @MyAnnotation
-public class Person extends Human {
+public class Person extends Human implements Comparable<Person>, Iterable<Person.HistoryRecord> {
 
     public static String universalRights = "All humans are created equal";
     public static int MAXIMUM_AGE = 130;
@@ -32,6 +33,29 @@ public class Person extends Human {
     public Person(String name, int age, Gender gender) throws PersonDiedException {
         this(name, age);
         this.gender = gender;
+    }
+
+    @Override
+    public Iterator<HistoryRecord> iterator() {
+        return new Iterator<>() {
+            private int index = 0;
+            @Override
+            public boolean hasNext() {
+                return index == history.size();
+            }
+
+            @Override
+            public HistoryRecord next() {
+                return history.get(index++);
+            }
+        };
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        if (o.age < age || o.name.compareTo(name) < 0) return -1;
+        if (o.age > age || o.name.compareTo(name) > 0) return 1;
+        return 0;
     }
 
     @Override
@@ -73,6 +97,7 @@ public class Person extends Human {
     @Override
     public int hashCode() {
         return age * name.hashCode() * gender.hashCode();
+//        return 1;
     }
 
     @Override
@@ -99,7 +124,7 @@ public class Person extends Human {
         }
     }
 
-    private class HistoryRecord {
+    public static class HistoryRecord {
         private final String description;
 
         public HistoryRecord(String description){
